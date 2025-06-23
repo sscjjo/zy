@@ -91,11 +91,7 @@ def main():
         return
     logging.info(f"获取到当前公网IP: {ip}")
 
-    # 1. 删除旧白名单
-    result_del = delete_pinzan_white_list(ip, PINZAN_USER_ID, no=PINZAN_NO)
-    logging.info(f"删除品赞白名单结果: {result_del}")
-
-    # 2. 更新白名单
+    # 只更新白名单
     result_pinzan = update_pinzan_white_list(ip, PINZAN_API_URL, PINZAN_NO, PINZAN_SIGN_KEY, PINZAN_LOGIN_PASSWORD, PINZAN_PACKAGE_SECRET)
     logging.info(f"更新品赞白名单结果: {result_pinzan}")
 
